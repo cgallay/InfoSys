@@ -104,7 +104,7 @@ if __name__ == "__main__":
             with torch.no_grad():
                 outputs = model(inputs)
             loss = criterion(outputs, labels)
-            pred = nn.Softmax()(outputs).argmax(1)
+            pred = nn.Softmax(dim=1)(outputs).argmax(1)
             losses.update(loss.item(), labels.shape[0])
             acc = accuracy_score(labels.cpu().numpy(), pred.cpu().numpy())
             accuracy.update(acc, labels.shape[0])

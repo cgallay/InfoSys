@@ -73,6 +73,6 @@ class BaselineCNN(nn.Module):
         self.eval()
         with torch.no_grad():
             x = self.forward(x)
-        return nn.Softmax(dim=7)(x)
+        return nn.Softmax(dim=1)(x)
         
 
