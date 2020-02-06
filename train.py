@@ -117,6 +117,6 @@ if __name__ == "__main__":
     plt.plot(train_losses, label="Training loss")
     plt.plot(test_losses, label="Validation loss")
     plt.legend()
-    plt.imsave('outputs/training_loss.png')
+    plt.savefig('outputs/training_loss.png')
     
     print('Finished Training')
