@@ -7,9 +7,8 @@ from tqdm import tqdm
 import torch.nn as nn
 from sklearn.metrics import accuracy_score
 
-from utils import AverageMeter
+from utils import AverageMeter, device
 from models import BaselineCNN
-
 
 MODEL_WEIGHTS_PATH = 'weights/baseline_weigths.pt'
 
@@ -37,7 +36,6 @@ def df2dataloader(df):
 
 if __name__ == "__main__":
     # Check running device
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     if "cuda" in str(device):
         print(f"Training runing on {torch.cuda.get_device_name()}")
     else:
